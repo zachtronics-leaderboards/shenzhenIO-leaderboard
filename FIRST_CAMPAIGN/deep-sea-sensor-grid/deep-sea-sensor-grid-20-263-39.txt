@@ -1,0 +1,133 @@
+[name] fastest
+[puzzle] Sz021
+[production-cost] 2000
+[power-usage] 263
+[lines-of-code] 39
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....9555555555555C....
+...8A.1D55554.1D4A1C..
+...3615614155C.2.A.2..
+.....14.15554A155694..
+...1555C15414A149568..
+....15435555C3556956..
+.....1555554355556....
+......................
+......................
+
+[chip] 
+[type] RADIO
+[x] 6
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 2
+
+[chip] 
+[type] ID
+[x] 3
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 3
+[code] 
+@ mov x0 dat
+@ slp 5
+@ mov x1 null
+  teq x1 dat
++ mov x1 x0
++ slp 2
++ mov p1 x2
++ mov p0 x3
++ slp 1
+  mov p1 x2
+  mov p0 x3
+  slp 1
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 4
+[code] 
+@ mov x1 x3
+  slx x3
+  teq x3 1
+  mov x0 acc
++ sub 5
++ mov acc x0
+  mov x2 x1
+  mov x2 x1
+  mov x2 x1
+  mov x2 x1
+  mov x2 x1
++ mov p1 x1
+- mov p0 x1
+- mov acc x0
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 5
+[code] 
+@ slp 1
+@ mov p0 x2
+@ mov p1 x0
+@ slp 1
+@ mov p0 x2
+@ mov p1 x0
+@ slp 1
+@ mov p0 x2
+@ mov p1 x0
+@ slp 1
+@ mov p0 x2
+@ mov p1 x0
+  
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 6
+
+[chip] 
+[type] RAM
+[x] 12
+[y] 6
+
+[chip] 
+[type] UC4
+[x] 4
+[y] 7
+[code] 
+@ mov 9 x1
