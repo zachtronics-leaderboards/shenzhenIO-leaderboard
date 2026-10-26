@@ -1,0 +1,93 @@
+[name] cost 14 | Power 510 | LOC 26
+[puzzle] Sz041
+[production-cost] 1400
+[power-usage] 510
+[lines-of-code] 26
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..955555555555554.....
+..215555555555555C....
+..9555C1555554.14A....
+..214.34..15D4.156....
+..8..154..1CA..154....
+..3541555556355555C...
+................142...
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 3
+[code] 
+@ mov 9 x0
+  slx x3
+  mov p0 acc
+  sub 50
+  mul acc
+  mov acc dat
+  mov p1 acc
+  sub 50
+  mul acc
+  add dat
+  dgt x3
+  mov acc x2
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 4
+
+[chip] 
+[type] BANK
+[x] 8
+[y] 4
+[rom] 
+4,2,2,2,1,1,1,1,1,-2,0,0,0,0
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 4
+[code] 
+  teq p1 100
++ mov 2 x0
++ mul x2
++ add x1
+- tcp x3 9
+- tlt x3 3
+- tcp x2 0
++ tcp x3 9
++ mov acc dat
++ mov 0 x1
++ mov dat x2
+- mov dat x2
+- mov acc x1
+  slp 1
+
+[chip] 
+[type] BANK
+[x] 17
+[y] 4
+[rom] 
+1,1,1,0,-1,0,-1,0,-1,0,1,1,1,0
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 6
