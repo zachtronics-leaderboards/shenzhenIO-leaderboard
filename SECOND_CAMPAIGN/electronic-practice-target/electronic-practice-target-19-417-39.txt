@@ -1,0 +1,112 @@
+[name] 417
+[puzzle] Sz041
+[production-cost] 1900
+[power-usage] 417
+[lines-of-code] 39
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..........15554.......
+..1555555555C15C15C...
+..95C.155554354A1CA...
+..2.354..154.156.2A...
+..8..14.954..15555E...
+..34.1556.1555555CA...
+.................22...
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 3
+[code] 
+  slx x3
+  mov p0 acc
+  sub 50
+  mul acc
+  mov acc dat
+  mov p1 acc
+  sub 50
+  mul acc
+  add dat
+  dgt x3
+  mov acc x2
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 4
+
+[chip] 
+[type] BANK
+[x] 7
+[y] 4
+[rom] 
+4,2,2,2,1,1,1,1,1,-2,0,0,0,0
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 4
+[code] 
+@ teq 0 1
+- slx x3
+- mov x3 dat
+  tcp p1 0
++ mov 2 x0
++ nop
++ add x1
+l:  mov acc x2
+  mov dat x1
++ tcp 0 x2 #0,-1,1
++ slp x2 #2
++ jmp l
+  slp 1
+- mov 0 acc
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 6
+[code] 
+@ teq 0 0
+l:+ teq p0 0
++ slp 1
++ jmp l
+  tcp 0 p0
+- mov 2 x0
+  mov 0 x3
+- add x2
+  mov acc x2
+- tcp x3 42 # 42
+  slp 1
++ mov acc x1
++ slp 17
++ mov 0 acc
+
+[chip] 
+[type] BANK
+[x] 17
+[y] 7
+[rom] 
+42,42,42,43,0,0,0,-1,2,-1,2,-1,2,1
