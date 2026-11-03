@@ -1,7 +1,7 @@
-[name] no nop 409
+[name] no nop 408
 [puzzle] Sz041
 [production-cost] 1900
-[power-usage] 409
+[power-usage] 408
 [lines-of-code] 39
 
 [traces] 
@@ -89,8 +89,7 @@ l:  mov acc x2
 [x] 14
 [y] 6
 [code] 
-@ teq 0 0
-l:+ teq p0 0
+@ teq p0 0
 + slp 1
 + jmp l
   tcp 0 p0
@@ -103,6 +102,7 @@ l:+ teq p0 0
 + mov acc x1
 + slp 17
 + mov 0 acc
+l: +teq p0 0
 
 [chip] 
 [type] BANK
